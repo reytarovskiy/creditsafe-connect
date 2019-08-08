@@ -2,6 +2,7 @@
 
 namespace SynergiTech\Creditsafe\Service;
 
+use SynergiTech\Creditsafe\Client;
 use \SynergiTech\Creditsafe\ListResult;
 use \SynergiTech\Creditsafe\Models\CompanySearchResult;
 use \SynergiTech\Creditsafe\Models\Company;
@@ -36,12 +37,13 @@ class CompanyService
 
     /**
      * This function is used to call the endpoint that gets the company report
-     * @param  string $id The ID of the given company that you want to get a report for
-     * @return array   Returns the results of the  get endpoint
+     * @param string $id The ID of the given company that you want to get a report for
+     * @param string $lang
+     * @return Company Returns the results of the  get endpoint
      */
-    public function get(string $id) : Company
+    public function get(string $id, $lang = 'en') : Company
     {
-        return new Company($this->client, $this->client->get('companies/'.$id));
+        return new Company($this->client, $this->client->get('companies/'.$id, ['language' => $lang]));
     }
 
     /**

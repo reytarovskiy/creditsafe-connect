@@ -41,7 +41,7 @@ class Company
     public function __construct($client, array $companyDetails)
     {
         $this->client = $client;
-        $this->companyID = $companyDetails['report']['companyId'];
+        $this->companyID = $companyDetails['companyId'];
         $this->businessName = $companyDetails['report']['companyIdentification']['basicInformation']['businessName'] ?? null;
         $this->registeredCompanyName = $companyDetails['report']['companyIdentification']['basicInformation']['registeredCompanyName'] ?? null;
         $this->companyRegistrationNumber = $companyDetails['report']['companyIdentification']['basicInformation']['companyRegistrationNumber'] ?? null;

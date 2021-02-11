@@ -4,7 +4,7 @@
     "require": {
         "php": ">=7.1",
         "guzzlehttp/guzzle": "^6.3",
-        "lcobucci/jwt": "^3.2.5"
+        "lcobucci/jwt": "3.2.5"
     },
     "license": "MIT",
     "authors": [
